@@ -6,7 +6,8 @@ public enum Command
 {
     Register,
     Message,
-    Confimation
+    Confimation,
+    GetUnreadMessages
 }
 
 public class MessageUDP
@@ -16,6 +17,7 @@ public class MessageUDP
     public string? FromName { get; set; } 
     public string? ToName { get; set; } 
     public string? Text { get; set; }
+    public List<string> UnreadMessages { get; set; }
 
     public string ToJson()
     {
