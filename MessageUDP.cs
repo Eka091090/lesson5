@@ -17,7 +17,12 @@ public class MessageUDP
     public string? FromName { get; set; } 
     public string? ToName { get; set; } 
     public string? Text { get; set; }
-    public List<string> UnreadMessages { get; set; }
+    public List<string> UnreadMessages { get; internal set; }
+
+    public override string ToString()
+    {
+        return $"{DateTime.Now} \n Получено сообщение {Text} \n от {FromName}.";
+    }
 
     public string ToJson()
     {
